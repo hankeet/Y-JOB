@@ -1,0 +1,692 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="JianZhiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="GongZuoLeiXing">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="gongzuoleixing1" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GongZuoXinXi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="zhaopinbiaoti" Type="nvarchar" MaxLength="50" />
+          <Property Name="zhaoPinZheLeiXingid" Type="nvarchar" MaxLength="50" />
+          <Property Name="gongZuoLeiXing" Type="nvarchar" MaxLength="50" />
+          <Property Name="sex" Type="nvarchar(max)" />
+          <Property Name="zhouMoJianZhi" Type="nvarchar" MaxLength="10" />
+          <Property Name="xinChouShuLiang" Type="nvarchar" MaxLength="50" />
+          <Property Name="zhaoPinRenShu" Type="nvarchar" MaxLength="50" />
+          <Property Name="kaiShiShiJian" Type="nvarchar" MaxLength="50" />
+          <Property Name="jieZhiShiJian" Type="nvarchar" MaxLength="50" />
+          <Property Name="chengShiQuYu" Type="nvarchar" MaxLength="50" />
+          <Property Name="gongZuoDiZhi" Type="nvarchar(max)" />
+          <Property Name="xiangQing" Type="nvarchar(max)" />
+          <Property Name="lianXiFangShi" Type="nvarchar" MaxLength="50" />
+          <Property Name="faBuShiJian" Type="datetime" />
+          <Property Name="yingPinXueShengid" Type="int" />
+          <Property Name="yingPinQingKuang" Type="nvarchar" MaxLength="50" />
+          <Property Name="luYongXueShengid" Type="int" />
+          <Property Name="luYongQingKuang" Type="nvarchar" MaxLength="50" />
+          <Property Name="yunXuFaBu" Type="varchar" MaxLength="2" />
+          <Property Name="zhaoMan" Type="varchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="HaoYouXinXi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" />
+          <Property Name="xueSheng1id" Type="int" />
+          <Property Name="xueSheng2id" Type="int" />
+          <Property Name="liaotian" Type="varchar(max)" />
+          <Property Name="jiaoYouShiJian" Type="datetime" />
+          <Property Name="zuDuiCiShu" Type="int" />
+          <Property Name="zuduigongzuo" Type="int" />
+        </EntityType>
+        <EntityType Name="ShangJiaJiaoYiJiLu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="shangJiaid" Type="int" Nullable="false" />
+          <Property Name="jiLu" Type="varchar(max)" />
+          <Property Name="wanCheng" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="pingJia" Type="varchar(max)" />
+          <Property Name="wanChengJiaoYiShiJian" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ShangJiaXinXi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="gongSi" Type="nvarchar" MaxLength="50" />
+          <Property Name="fuZeRen" Type="nvarchar" MaxLength="50" />
+          <Property Name="zhengJianHao" Type="nvarchar" MaxLength="50" />
+          <Property Name="head_image" Type="varbinary" MaxLength="50" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="pass" Type="nvarchar" MaxLength="50" />
+          <Property Name="xuKeZheng" Type="varbinary" MaxLength="50" />
+          <Property Name="huiYuan" Type="nvarchar" MaxLength="50" />
+          <Property Name="diZhi" Type="nvarchar" MaxLength="50" />
+          <Property Name="tongGuo" Type="nvarchar" MaxLength="50" />
+          <Property Name="leiXing" Type="nvarchar" MaxLength="50" />
+          <Property Name="zaoPinCiShu" Type="nvarchar" MaxLength="50" />
+          <Property Name="xinYong" Type="nvarchar" MaxLength="50" />
+          <Property Name="qq" Type="nchar" MaxLength="10" />
+          <Property Name="weixin" Type="nvarchar" MaxLength="50" />
+          <Property Name="day_login" Type="datetime" />
+          <Property Name="zhaoPinCiShi" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ShangJiaXinXi2">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="gongSi" Type="nvarchar" MaxLength="50" />
+          <Property Name="fuZeRen" Type="nvarchar" MaxLength="50" />
+          <Property Name="zhengJianHao" Type="nvarchar" MaxLength="50" />
+          <Property Name="head_image" Type="varbinary(max)" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="pass" Type="nvarchar" MaxLength="50" />
+          <Property Name="xuKeZheng" Type="varbinary(max)" />
+          <Property Name="huiYuan" Type="nvarchar" MaxLength="50" />
+          <Property Name="diZhi" Type="nvarchar" MaxLength="50" />
+          <Property Name="tongGuo" Type="nvarchar" MaxLength="50" />
+          <Property Name="leiXing" Type="nvarchar" MaxLength="50" />
+          <Property Name="zaoPinCiShu" Type="nvarchar" MaxLength="50" />
+          <Property Name="xinYong" Type="nvarchar" MaxLength="50" />
+          <Property Name="qq" Type="nvarchar" MaxLength="50" />
+          <Property Name="weixin" Type="nvarchar" MaxLength="50" />
+          <Property Name="day_login" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ShouCangGongZuo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="xueShengid" Type="int" Nullable="false" />
+          <Property Name="gongZuoid" Type="int" Nullable="false" />
+          <Property Name="shiJian" Type="datetime" Nullable="false" />
+          <Property Name="shiXiao" Type="varchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShouCangShangJia">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="xueShengid" Type="int" Nullable="false" />
+          <Property Name="shangJiaid" Type="int" Nullable="false" />
+          <Property Name="shiJian" Type="datetime" Nullable="false" />
+          <Property Name="shiXiao" Type="varchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="XueShengJiaoYiJiLu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="xueShengid" Type="int" Nullable="false" />
+          <Property Name="jiLu" Type="varchar(max)" />
+          <Property Name="wanCheng" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="pingJia" Type="varchar(max)" />
+          <Property Name="wanChengJiaoYiShiJian" Type="datetime" />
+          <Property Name="keJian" Type="varchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="XueShengKeCheng">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="xueshengid" Type="int" Nullable="false" />
+          <Property Name="xuexiao" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="xuehao" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="xuehaopass" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="yi" Type="varchar(max)" />
+          <Property Name="er" Type="varchar(max)" />
+          <Property Name="san" Type="varchar(max)" />
+          <Property Name="si" Type="varchar(max)" />
+          <Property Name="wu" Type="varchar(max)" />
+          <Property Name="liu" Type="varchar(max)" />
+          <Property Name="qi" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="XueShengQiuZhi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="gongZuoLeiXingid" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="titie" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="xinXi" Type="varchar(max)" Nullable="false" />
+          <Property Name="faBuShiJian" Type="datetime" Nullable="false" />
+          <Property Name="xueShengid" Type="int" Nullable="false" />
+          <Property Name="shangJiaid" Type="int" Nullable="false" />
+          <Property Name="zhongyishangjia" Type="varchar(max)" />
+          <Property Name="xuanze商家" Type="varchar(max)" />
+          <Property Name="chengLiShiJian" Type="datetime" />
+        </EntityType>
+        <EntityType Name="XueShengXinXi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" />
+          <Property Name="head_image" Type="varbinary(max)" />
+          <Property Name="phone" Type="varchar" MaxLength="11" />
+          <Property Name="pass" Type="varchar" MaxLength="30" />
+          <Property Name="huiYuan" Type="varchar" MaxLength="2" />
+          <Property Name="diZhi" Type="varchar" MaxLength="100" />
+          <Property Name="chuShengRiQi" Type="datetime" />
+          <Property Name="nianJi" Type="varchar" MaxLength="200" />
+          <Property Name="shouCangShangJia" Type="varchar(max)" />
+          <Property Name="shouCangGongZuo" Type="varchar(max)" />
+          <Property Name="ciShu" Type="int" />
+          <Property Name="xinYong" Type="int" />
+          <Property Name="shangJia" Type="varchar" MaxLength="2" />
+          <Property Name="zhaoPinZheid" Type="int" />
+          <Property Name="qq" Type="varchar" MaxLength="20" />
+          <Property Name="weixin" Type="varchar" MaxLength="20" />
+          <Property Name="day_login" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ZhaoPinZheLeiXing">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="zhaoPinZheLeiXing1" Type="int" Nullable="false" />
+          <Property Name="zhaoPinZheXinXiid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="JianZhiModelStoreContainer">
+          <EntitySet Name="GongZuoLeiXing" EntityType="Self.GongZuoLeiXing" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GongZuoXinXi" EntityType="Self.GongZuoXinXi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HaoYouXinXi" EntityType="Self.HaoYouXinXi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShangJiaJiaoYiJiLu" EntityType="Self.ShangJiaJiaoYiJiLu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShangJiaXinXi" EntityType="Self.ShangJiaXinXi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShangJiaXinXi2" EntityType="Self.ShangJiaXinXi2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShouCangGongZuo" EntityType="Self.ShouCangGongZuo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShouCangShangJia" EntityType="Self.ShouCangShangJia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="XueShengJiaoYiJiLu" EntityType="Self.XueShengJiaoYiJiLu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="XueShengKeCheng" EntityType="Self.XueShengKeCheng" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="XueShengQiuZhi" EntityType="Self.XueShengQiuZhi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="XueShengXinXi" EntityType="Self.XueShengXinXi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ZhaoPinZheLeiXing" EntityType="Self.ZhaoPinZheLeiXing" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="JianZhiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="JianZhiEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GongZuoLeiXing" EntityType="JianZhiModel.GongZuoLeiXing" />
+          <EntitySet Name="GongZuoXinXi" EntityType="JianZhiModel.GongZuoXinXi" />
+          <EntitySet Name="HaoYouXinXi" EntityType="JianZhiModel.HaoYouXinXi" />
+          <EntitySet Name="ShangJiaJiaoYiJiLu" EntityType="JianZhiModel.ShangJiaJiaoYiJiLu" />
+          <EntitySet Name="ShangJiaXinXi" EntityType="JianZhiModel.ShangJiaXinXi" />
+          <EntitySet Name="ShangJiaXinXi2" EntityType="JianZhiModel.ShangJiaXinXi2" />
+          <EntitySet Name="ShouCangGongZuo" EntityType="JianZhiModel.ShouCangGongZuo" />
+          <EntitySet Name="ShouCangShangJia" EntityType="JianZhiModel.ShouCangShangJia" />
+          <EntitySet Name="XueShengJiaoYiJiLu" EntityType="JianZhiModel.XueShengJiaoYiJiLu" />
+          <EntitySet Name="XueShengKeCheng" EntityType="JianZhiModel.XueShengKeCheng" />
+          <EntitySet Name="XueShengQiuZhi" EntityType="JianZhiModel.XueShengQiuZhi" />
+          <EntitySet Name="XueShengXinXi" EntityType="JianZhiModel.XueShengXinXi" />
+          <EntitySet Name="ZhaoPinZheLeiXing" EntityType="JianZhiModel.ZhaoPinZheLeiXing" />
+        </EntityContainer>
+        <EntityType Name="GongZuoLeiXing">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="gongzuoleixing1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="GongZuoXinXi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="zhaopinbiaoti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="zhaoPinZheLeiXingid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gongZuoLeiXing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sex" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="zhouMoJianZhi" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="xinChouShuLiang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="zhaoPinRenShu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kaiShiShiJian" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="jieZhiShiJian" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="chengShiQuYu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gongZuoDiZhi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xiangQing" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="lianXiFangShi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="faBuShiJian" Type="DateTime" Precision="3" />
+          <Property Name="yingPinXueShengid" Type="Int32" />
+          <Property Name="yingPinQingKuang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="luYongXueShengid" Type="Int32" />
+          <Property Name="luYongQingKuang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="yunXuFaBu" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="zhaoMan" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="HaoYouXinXi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="xueSheng1id" Type="Int32" />
+          <Property Name="xueSheng2id" Type="Int32" />
+          <Property Name="liaotian" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="jiaoYouShiJian" Type="DateTime" Precision="3" />
+          <Property Name="zuDuiCiShu" Type="Int32" />
+          <Property Name="zuduigongzuo" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ShangJiaJiaoYiJiLu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="shangJiaid" Type="Int32" Nullable="false" />
+          <Property Name="jiLu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="wanCheng" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="pingJia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="wanChengJiaoYiShiJian" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ShangJiaXinXi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="gongSi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fuZeRen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="zhengJianHao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="head_image" Type="Binary" MaxLength="50" FixedLength="false" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xuKeZheng" Type="Binary" MaxLength="50" FixedLength="false" />
+          <Property Name="huiYuan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="diZhi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tongGuo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="leiXing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="zaoPinCiShu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xinYong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="qq" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="weixin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="day_login" Type="DateTime" Precision="3" />
+          <Property Name="zhaoPinCiShi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ShangJiaXinXi2">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="gongSi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fuZeRen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="zhengJianHao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="head_image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xuKeZheng" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="huiYuan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="diZhi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tongGuo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="leiXing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="zaoPinCiShu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xinYong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="qq" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="weixin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="day_login" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ShouCangGongZuo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="xueShengid" Type="Int32" Nullable="false" />
+          <Property Name="gongZuoid" Type="Int32" Nullable="false" />
+          <Property Name="shiJian" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="shiXiao" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ShouCangShangJia">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="xueShengid" Type="Int32" Nullable="false" />
+          <Property Name="shangJiaid" Type="Int32" Nullable="false" />
+          <Property Name="shiJian" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="shiXiao" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="XueShengJiaoYiJiLu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="xueShengid" Type="Int32" Nullable="false" />
+          <Property Name="jiLu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="wanCheng" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="pingJia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="wanChengJiaoYiShiJian" Type="DateTime" Precision="3" />
+          <Property Name="keJian" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="XueShengKeCheng">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="xueshengid" Type="Int32" Nullable="false" />
+          <Property Name="xuexiao" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="xuehao" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="xuehaopass" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="yi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="er" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="san" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="si" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="wu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="liu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="qi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="XueShengQiuZhi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="gongZuoLeiXingid" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="titie" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="xinXi" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="faBuShiJian" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="xueShengid" Type="Int32" Nullable="false" />
+          <Property Name="shangJiaid" Type="Int32" Nullable="false" />
+          <Property Name="zhongyishangjia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="xuanze商家" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="chengLiShiJian" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="XueShengXinXi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="head_image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="phone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="pass" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="huiYuan" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="diZhi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="chuShengRiQi" Type="DateTime" Precision="3" />
+          <Property Name="nianJi" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="shouCangShangJia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="shouCangGongZuo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ciShu" Type="Int32" />
+          <Property Name="xinYong" Type="Int32" />
+          <Property Name="shangJia" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="zhaoPinZheid" Type="Int32" />
+          <Property Name="qq" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="weixin" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="day_login" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ZhaoPinZheLeiXing">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="zhaoPinZheLeiXing1" Type="Int32" Nullable="false" />
+          <Property Name="zhaoPinZheXinXiid" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="JianZhiModelStoreContainer" CdmEntityContainer="JianZhiEntities">
+          <EntitySetMapping Name="GongZuoLeiXing">
+            <EntityTypeMapping TypeName="JianZhiModel.GongZuoLeiXing">
+              <MappingFragment StoreEntitySet="GongZuoLeiXing">
+                <ScalarProperty Name="gongzuoleixing1" ColumnName="gongzuoleixing1" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GongZuoXinXi">
+            <EntityTypeMapping TypeName="JianZhiModel.GongZuoXinXi">
+              <MappingFragment StoreEntitySet="GongZuoXinXi">
+                <ScalarProperty Name="zhaoMan" ColumnName="zhaoMan" />
+                <ScalarProperty Name="yunXuFaBu" ColumnName="yunXuFaBu" />
+                <ScalarProperty Name="luYongQingKuang" ColumnName="luYongQingKuang" />
+                <ScalarProperty Name="luYongXueShengid" ColumnName="luYongXueShengid" />
+                <ScalarProperty Name="yingPinQingKuang" ColumnName="yingPinQingKuang" />
+                <ScalarProperty Name="yingPinXueShengid" ColumnName="yingPinXueShengid" />
+                <ScalarProperty Name="faBuShiJian" ColumnName="faBuShiJian" />
+                <ScalarProperty Name="lianXiFangShi" ColumnName="lianXiFangShi" />
+                <ScalarProperty Name="xiangQing" ColumnName="xiangQing" />
+                <ScalarProperty Name="gongZuoDiZhi" ColumnName="gongZuoDiZhi" />
+                <ScalarProperty Name="chengShiQuYu" ColumnName="chengShiQuYu" />
+                <ScalarProperty Name="jieZhiShiJian" ColumnName="jieZhiShiJian" />
+                <ScalarProperty Name="kaiShiShiJian" ColumnName="kaiShiShiJian" />
+                <ScalarProperty Name="zhaoPinRenShu" ColumnName="zhaoPinRenShu" />
+                <ScalarProperty Name="xinChouShuLiang" ColumnName="xinChouShuLiang" />
+                <ScalarProperty Name="zhouMoJianZhi" ColumnName="zhouMoJianZhi" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="gongZuoLeiXing" ColumnName="gongZuoLeiXing" />
+                <ScalarProperty Name="zhaoPinZheLeiXingid" ColumnName="zhaoPinZheLeiXingid" />
+                <ScalarProperty Name="zhaopinbiaoti" ColumnName="zhaopinbiaoti" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HaoYouXinXi">
+            <EntityTypeMapping TypeName="JianZhiModel.HaoYouXinXi">
+              <MappingFragment StoreEntitySet="HaoYouXinXi">
+                <ScalarProperty Name="zuduigongzuo" ColumnName="zuduigongzuo" />
+                <ScalarProperty Name="zuDuiCiShu" ColumnName="zuDuiCiShu" />
+                <ScalarProperty Name="jiaoYouShiJian" ColumnName="jiaoYouShiJian" />
+                <ScalarProperty Name="liaotian" ColumnName="liaotian" />
+                <ScalarProperty Name="xueSheng2id" ColumnName="xueSheng2id" />
+                <ScalarProperty Name="xueSheng1id" ColumnName="xueSheng1id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShangJiaJiaoYiJiLu">
+            <EntityTypeMapping TypeName="JianZhiModel.ShangJiaJiaoYiJiLu">
+              <MappingFragment StoreEntitySet="ShangJiaJiaoYiJiLu">
+                <ScalarProperty Name="wanChengJiaoYiShiJian" ColumnName="wanChengJiaoYiShiJian" />
+                <ScalarProperty Name="pingJia" ColumnName="pingJia" />
+                <ScalarProperty Name="wanCheng" ColumnName="wanCheng" />
+                <ScalarProperty Name="jiLu" ColumnName="jiLu" />
+                <ScalarProperty Name="shangJiaid" ColumnName="shangJiaid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShangJiaXinXi">
+            <EntityTypeMapping TypeName="JianZhiModel.ShangJiaXinXi">
+              <MappingFragment StoreEntitySet="ShangJiaXinXi">
+                <ScalarProperty Name="zhaoPinCiShi" ColumnName="zhaoPinCiShi" />
+                <ScalarProperty Name="day_login" ColumnName="day_login" />
+                <ScalarProperty Name="weixin" ColumnName="weixin" />
+                <ScalarProperty Name="qq" ColumnName="qq" />
+                <ScalarProperty Name="xinYong" ColumnName="xinYong" />
+                <ScalarProperty Name="zaoPinCiShu" ColumnName="zaoPinCiShu" />
+                <ScalarProperty Name="leiXing" ColumnName="leiXing" />
+                <ScalarProperty Name="tongGuo" ColumnName="tongGuo" />
+                <ScalarProperty Name="diZhi" ColumnName="diZhi" />
+                <ScalarProperty Name="huiYuan" ColumnName="huiYuan" />
+                <ScalarProperty Name="xuKeZheng" ColumnName="xuKeZheng" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="head_image" ColumnName="head_image" />
+                <ScalarProperty Name="zhengJianHao" ColumnName="zhengJianHao" />
+                <ScalarProperty Name="fuZeRen" ColumnName="fuZeRen" />
+                <ScalarProperty Name="gongSi" ColumnName="gongSi" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShangJiaXinXi2">
+            <EntityTypeMapping TypeName="JianZhiModel.ShangJiaXinXi2">
+              <MappingFragment StoreEntitySet="ShangJiaXinXi2">
+                <ScalarProperty Name="day_login" ColumnName="day_login" />
+                <ScalarProperty Name="weixin" ColumnName="weixin" />
+                <ScalarProperty Name="qq" ColumnName="qq" />
+                <ScalarProperty Name="xinYong" ColumnName="xinYong" />
+                <ScalarProperty Name="zaoPinCiShu" ColumnName="zaoPinCiShu" />
+                <ScalarProperty Name="leiXing" ColumnName="leiXing" />
+                <ScalarProperty Name="tongGuo" ColumnName="tongGuo" />
+                <ScalarProperty Name="diZhi" ColumnName="diZhi" />
+                <ScalarProperty Name="huiYuan" ColumnName="huiYuan" />
+                <ScalarProperty Name="xuKeZheng" ColumnName="xuKeZheng" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="head_image" ColumnName="head_image" />
+                <ScalarProperty Name="zhengJianHao" ColumnName="zhengJianHao" />
+                <ScalarProperty Name="fuZeRen" ColumnName="fuZeRen" />
+                <ScalarProperty Name="gongSi" ColumnName="gongSi" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShouCangGongZuo">
+            <EntityTypeMapping TypeName="JianZhiModel.ShouCangGongZuo">
+              <MappingFragment StoreEntitySet="ShouCangGongZuo">
+                <ScalarProperty Name="shiXiao" ColumnName="shiXiao" />
+                <ScalarProperty Name="shiJian" ColumnName="shiJian" />
+                <ScalarProperty Name="gongZuoid" ColumnName="gongZuoid" />
+                <ScalarProperty Name="xueShengid" ColumnName="xueShengid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShouCangShangJia">
+            <EntityTypeMapping TypeName="JianZhiModel.ShouCangShangJia">
+              <MappingFragment StoreEntitySet="ShouCangShangJia">
+                <ScalarProperty Name="shiXiao" ColumnName="shiXiao" />
+                <ScalarProperty Name="shiJian" ColumnName="shiJian" />
+                <ScalarProperty Name="shangJiaid" ColumnName="shangJiaid" />
+                <ScalarProperty Name="xueShengid" ColumnName="xueShengid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="XueShengJiaoYiJiLu">
+            <EntityTypeMapping TypeName="JianZhiModel.XueShengJiaoYiJiLu">
+              <MappingFragment StoreEntitySet="XueShengJiaoYiJiLu">
+                <ScalarProperty Name="keJian" ColumnName="keJian" />
+                <ScalarProperty Name="wanChengJiaoYiShiJian" ColumnName="wanChengJiaoYiShiJian" />
+                <ScalarProperty Name="pingJia" ColumnName="pingJia" />
+                <ScalarProperty Name="wanCheng" ColumnName="wanCheng" />
+                <ScalarProperty Name="jiLu" ColumnName="jiLu" />
+                <ScalarProperty Name="xueShengid" ColumnName="xueShengid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="XueShengKeCheng">
+            <EntityTypeMapping TypeName="JianZhiModel.XueShengKeCheng">
+              <MappingFragment StoreEntitySet="XueShengKeCheng">
+                <ScalarProperty Name="qi" ColumnName="qi" />
+                <ScalarProperty Name="liu" ColumnName="liu" />
+                <ScalarProperty Name="wu" ColumnName="wu" />
+                <ScalarProperty Name="si" ColumnName="si" />
+                <ScalarProperty Name="san" ColumnName="san" />
+                <ScalarProperty Name="er" ColumnName="er" />
+                <ScalarProperty Name="yi" ColumnName="yi" />
+                <ScalarProperty Name="xuehaopass" ColumnName="xuehaopass" />
+                <ScalarProperty Name="xuehao" ColumnName="xuehao" />
+                <ScalarProperty Name="xuexiao" ColumnName="xuexiao" />
+                <ScalarProperty Name="xueshengid" ColumnName="xueshengid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="XueShengQiuZhi">
+            <EntityTypeMapping TypeName="JianZhiModel.XueShengQiuZhi">
+              <MappingFragment StoreEntitySet="XueShengQiuZhi">
+                <ScalarProperty Name="chengLiShiJian" ColumnName="chengLiShiJian" />
+                <ScalarProperty Name="xuanze商家" ColumnName="xuanze商家" />
+                <ScalarProperty Name="zhongyishangjia" ColumnName="zhongyishangjia" />
+                <ScalarProperty Name="shangJiaid" ColumnName="shangJiaid" />
+                <ScalarProperty Name="xueShengid" ColumnName="xueShengid" />
+                <ScalarProperty Name="faBuShiJian" ColumnName="faBuShiJian" />
+                <ScalarProperty Name="xinXi" ColumnName="xinXi" />
+                <ScalarProperty Name="titie" ColumnName="titie" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="gongZuoLeiXingid" ColumnName="gongZuoLeiXingid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="XueShengXinXi">
+            <EntityTypeMapping TypeName="JianZhiModel.XueShengXinXi">
+              <MappingFragment StoreEntitySet="XueShengXinXi">
+                <ScalarProperty Name="day_login" ColumnName="day_login" />
+                <ScalarProperty Name="weixin" ColumnName="weixin" />
+                <ScalarProperty Name="qq" ColumnName="qq" />
+                <ScalarProperty Name="zhaoPinZheid" ColumnName="zhaoPinZheid" />
+                <ScalarProperty Name="shangJia" ColumnName="shangJia" />
+                <ScalarProperty Name="xinYong" ColumnName="xinYong" />
+                <ScalarProperty Name="ciShu" ColumnName="ciShu" />
+                <ScalarProperty Name="shouCangGongZuo" ColumnName="shouCangGongZuo" />
+                <ScalarProperty Name="shouCangShangJia" ColumnName="shouCangShangJia" />
+                <ScalarProperty Name="nianJi" ColumnName="nianJi" />
+                <ScalarProperty Name="chuShengRiQi" ColumnName="chuShengRiQi" />
+                <ScalarProperty Name="diZhi" ColumnName="diZhi" />
+                <ScalarProperty Name="huiYuan" ColumnName="huiYuan" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="head_image" ColumnName="head_image" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZhaoPinZheLeiXing">
+            <EntityTypeMapping TypeName="JianZhiModel.ZhaoPinZheLeiXing">
+              <MappingFragment StoreEntitySet="ZhaoPinZheLeiXing">
+                <ScalarProperty Name="zhaoPinZheXinXiid" ColumnName="zhaoPinZheXinXiid" />
+                <ScalarProperty Name="zhaoPinZheLeiXing1" ColumnName="zhaoPinZheLeiXing1" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
